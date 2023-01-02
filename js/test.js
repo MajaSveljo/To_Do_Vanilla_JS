@@ -3,4 +3,6 @@ const test = () => {
   test1.style.backgroundColor = "red";
 };
 
-export { test };
+const testVar = "ćao";
+
+export { test, testVar };
