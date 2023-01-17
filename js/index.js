@@ -1,7 +1,10 @@
-import { test, testVar } from "./test.js";
+import { list } from "./renderTodosList.js";
 import { fetchTodos } from "./fetchTodos.js";
 
-test();
-fetchTodos();
+const testFn = (data, container) => {
+  container = data;
+};
 
-export { testVar };
+let test;
+fetchTodos(testFn(test));
+console.log(test);
