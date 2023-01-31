@@ -4,14 +4,35 @@
   box-sizing: border-box;
 }
 
-form {
+.todo-form {
   padding: 20px;
 }
 
-ul {
+.todo-list {
   list-style: none;
 }
 
-li {
-  padding-bottom: 5px;
+.todo-label {
+  display: flex;
+  align-items: center;
+}
+
+.todo-checkbox {
+  margin-right: 5px;
+}
+
+.todo-item {
+  padding-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.delete-todo {
+  background-color: rgba(255, 0, 0, 0.8);
+  padding: 4px 6px;
+  line-height: 12px;
+  font-size: 12px;
+  color: white;
+  cursor: pointer;
 }
