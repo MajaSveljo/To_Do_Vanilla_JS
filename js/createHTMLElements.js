@@ -4,9 +4,11 @@ const createCheckbox = (data) => {
   let checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.className = "todo-checkbox";
-  checkbox.id = `checkbox${data.id}`;
+  checkbox.id = `checkbox ${data.id}`;
 
-  checkbox.addEventListener("click", (event) => console.log(event.target.id));
+  checkbox.addEventListener("click", (event) =>
+    deleteTodo(event.target.id.split(" ")[1])
+  );
 
   return checkbox;
 };
