@@ -1,9 +1,31 @@
 import { deleteTodo } from "./deleteTodo.js";
 
+const createCheckbox = (data) => {
+  let checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.className = "todo-checkbox";
+  checkbox.id = `checkbox${data.id}`;
+
+  checkbox.addEventListener("click", (event) => console.log(event.target.id));
+
+  return checkbox;
+};
+
+const createLabel = (data) => {
+  let label = document.createElement("label");
+  label.className = "todo-label";
+  const text = document.createTextNode(`${data.title}`);
+  label.appendChild(createCheckbox(data));
+  label.appendChild(text);
+
+  return label;
+};
+
 const createTodoLi = (data) => {
   let li = document.createElement("li");
   li.className = "todo-item";
-  li.innerHTML = `<label class="todo-label"><input class="todo-checkbox" type='checkbox' id='${data.id}' name='${data.title}' value='${data.title}' /> ${data.title}</label>`;
+  let label = createLabel(data);
+  li.appendChild(label);
   li.id = data.id;
 
   return li;
@@ -21,11 +43,11 @@ const createDeleteTodoSpan = (todoId) => {
   return deleteTodoSpan;
 };
 
-const createCheckbox = (data) => {
+const createTodo = (data) => {
   let li = createTodoLi(data);
   let deleteTodoSpan = createDeleteTodoSpan(data.id);
   li.appendChild(deleteTodoSpan);
   return li;
 };
 
-export { createCheckbox };
+export { createTodo };
