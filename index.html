@@ -10,7 +10,17 @@
   </head>
   <body>
     <form class="todo-form">
+      <div class="todo-add">
+        <h4 class="todo-add-heading">Add new todo:</h4>
+        <input type="text" id="add-new-todo"></input>
+      </div>
       <ul class="todo-list" id="todos"></ul>
     </form>
+
+    <script type="module">
+      import {addTodo} from './js/index.js'
+    
+      document.querySelector('#add-new-todo').addEventListener('keydown', addTodo)
+    </script>
   </body>
 </html>

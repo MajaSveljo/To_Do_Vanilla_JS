@@ -35,7 +35,7 @@ const createTodoLi = (data) => {
 
 const createDeleteTodoSpan = (todoId) => {
   let deleteTodoSpan = document.createElement("span");
-  deleteTodoSpan.className = "delete-todo";
+  deleteTodoSpan.className = "todo-delete";
   deleteTodoSpan.id = todoId;
   deleteTodoSpan.innerHTML = "X";
   deleteTodoSpan.addEventListener("click", (event) =>
