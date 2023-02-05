@@ -13,6 +13,7 @@ const addTodo = (event) => {
     const todoData = createTodoObject(list, event.target.value);
     const todo = createTodo(todoData);
     list.append(todo);
+    event.target.value = "";
   }
 };
 
